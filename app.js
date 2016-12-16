@@ -30,7 +30,7 @@ app.get('/calculator', routes.calculator);
 
 app.post("/calculator",function(req,res){
 	var value1 = parseInt(req.body.value1)
-	var value2 = parseInt(req.body.value1)
+	var value2 = parseInt(req.body.value2)
 	if(req.body.operation==='+')
 		var result = value1 + value2
 	else if(req.body.operation==='-')
