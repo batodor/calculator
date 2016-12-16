@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/styles.css')
+	body
+		header
+			h1 #{title}
+		.container
+			.main-content
+				.main-menu
+					a(href="/",class="menu-link") На главную
+					a(href="/operations",class="menu-link") Все операции
+					a(href="/calculator",class="menu-link") Калькулятор
+				table
+					thead
+						tr
+							th ID
+							th Первое число
+							th Второе число
+							th Оператор
+							th Ответ
+					tbody
+						each calc in calculations
+							tr
+								td #{calc.id}
+								td #{calc.value1}
+								td #{calc.value2}
+								td #{calc.operation}
+								td #{calc.result}

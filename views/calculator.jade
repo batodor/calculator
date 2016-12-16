@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/styles.css')
+	body
+		header
+			h1 #{title}
+		.container
+			.main-content 
+				.main-menu
+					a(href="/",class="menu-link") На главную
+					a(href="/operations",class="menu-link") Все операции
+					a(href="/calculator",class="menu-link") Калькулятор
+				form(method="POST", action="/calculator")
+					input(type="hidden", name="_method", value="POST")
+					input(type="number",name="value1",placeholder="Первое число")
+					input(type="number",name="value2",placeholder="Второе число")
+					input(type="text",name="operation",placeholder="Оператор: +,-,*,/",pattern="{1}")
+					p
+						input(type="submit")
